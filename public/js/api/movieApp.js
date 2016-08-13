@@ -45,6 +45,7 @@ var MovieApp = (function(){
 							$("#catalog .movie").eq(i).addClass("listed");
 						}
 					}
+					$("#wrapper").scrollTop(0);
 				}
 			}),
 			
