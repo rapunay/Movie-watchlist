@@ -6,7 +6,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #000000;
+	height: 100vh;
 }
 
 button:focus {
@@ -14,16 +14,20 @@ button:focus {
 }
 
 #wrapper {
-	margin: 0 auto;
 	min-width: 320px;
+	height: 100%;
+	overflow: auto;
+	margin: 0 auto;
+	background: #000000;
 }
 
 #catalog {
 	width: 0px;
-	height: 475px;
+	height: calc(100% - 50px);
+	min-height: calc(100% - 110px);
 	overflow: hidden;
 	text-align: center;
-	margin-top: 30px;
+	padding-top: 30px;
 }
 
 #catalog.hasMovies {
@@ -35,23 +39,25 @@ button:focus {
 }
 
 .movie {
-	width: calc(100%/4 - 30px);
-	height: 450px;
-	margin: 10px;
+	width: calc(100%/4 - 10px);
+	min-width: 150px;
+	height: 100%;
+	margin-left: 5px;
+	margin-right: 5px;
 	background: #eeeeee;
 	border: 3px solid #cccccc;
 	display: inline-block;
 	vertical-align: top;
-	min-width: 150px;
+	overflow: auto;
 }
 
 .movie .title {
-	margin: 10px;
+	margin: 5px;
 	height: 35px;
 }
 
 .movie .detail {
-	height: 250px;
+	height: 260px;
 }
 
 .movie .photo {
@@ -64,8 +70,10 @@ button:focus {
 .movie .caption {
 	height: 0px;
 	max-height: 100%;
-	margin: 0px;
+	padding: 8px;
 	overflow: auto;
+	text-align: justify;
+	visibility: hidden;
 }
 
 .movie .photo,
@@ -82,6 +90,7 @@ button:focus {
 .movie .detail:hover .caption,
 .movie .detail:active .caption {
 	height: calc(100% - 10px);
+	visibility: visible;
 }
 
 .movie > .classification {
@@ -95,6 +104,7 @@ button:focus {
 .movie > button {
 	min-width: 34px;
 	max-width: calc(100% - 10px);
+	height: 36px;
 	padding: 8px;
 	font-weight: bold;
 	cursor: pointer;
@@ -128,6 +138,7 @@ button:focus {
 #pagination {
 	text-align: center;
 	margin: 0 auto;
+	padding: 6px;
 }
 
 #pagination button {
@@ -151,7 +162,6 @@ button:focus {
 #watchlist {
 	height: 30px;
 	position: fixed;
-	top: 0px;
 	right: 10px;
 	color: #fbb829;
 	text-align: right;
@@ -197,6 +207,7 @@ button:focus {
 #watchlist-items ul {
 	list-style: none;
 	padding-left: 10px;
+	padding-top: 10px;
 }
 
 #watchlist-items li:hover .item {
@@ -246,9 +257,9 @@ button:focus {
     background-color: #ffffff;
 }
 
-@media only screen and (max-width: 900px) and (min-width: 751px) {
+@media only screen and (max-width: 900px) and (min-width: 768px) {
 	.movie .title {
-		height: 50px;
+		height: 60px;
 	}
 
 	.movie > .classification {
@@ -257,14 +268,14 @@ button:focus {
 	}
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 767px) {
 	#catalog {
-		height: 550px;
+		height: 530px;
 	}
 
     .movie {
     	width: calc(100%/2 - 20px);
-    	height: 250px;
+    	height: 240px;
     }
 
     .movie .detail {
@@ -281,6 +292,7 @@ button:focus {
     .movie .caption,
     .movie .detail:hover .caption {
     	height: 100%;
+    	visibility: visible;
     }
 
 	.movie .classification {

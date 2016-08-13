@@ -36,7 +36,6 @@ var Paginator = (function(){
 			if(paginator.onSwitchPage){
 				paginator.onSwitchPage(pageNumber);
 			}
-			$(document).scrollTop(0);
 			paginator.update();
 		},
 		
